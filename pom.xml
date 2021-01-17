@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xml:space="preserve">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>no.priv.bang.myapps</groupId>
+    <artifactId>myapps</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <name>Master aggregate karaf feature repository</name>
+    <description>Install all karaf apps running on my karaf cloud server</description>
+
+    <properties>
+        <authservice.version>LATEST</authservice.version>
+        <ukelonn.version>LATEST</ukelonn.version>
+        <handlereg.version>LATEST</handlereg.version>
+        <oldalbum.version>LATEST</oldalbum.version>
+        <sonarcollector.version>LATEST</sonarcollector.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>filter-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/filtered-resources</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <inherited>false</inherited>
+                <executions>
+                    <execution>
+                        <id>attach-karaf-feature</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>target/classes/feature.xml</file>
+                                    <type>xml</type>
+                                    <classifier>features</classifier>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>3.2.0</version>
+            </extension>
+        </extensions>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>ssh-maven-travis</id>
+            <url>sftp://maven.bang.priv.no/repository</url>
+        </repository>
+        <snapshotRepository>
+            <id>ssh-maven-travis</id>
+            <url>sftp://maven.bang.priv.no/repository</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>

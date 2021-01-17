@@ -1,0 +1,16 @@
+* Alle applikasjoner
+** Installasjon
+ 1. Ta SSH inn til karaf:
+    #+begin_example
+      ssh -p 8101 karaf@localhost
+    #+end_example
+ 2. Installer alle applikasjoner:
+    #+begin_example
+      feature:repo-add mvn:no.priv.bang.myapps/myapps/LATEST/xml/features
+      feature:install myapps
+    #+end_example
+** Bygg
+For å bygge:
+#+begin_example
+  cd ~/git/myapps/; mvn -B clean install
+#+end_example
