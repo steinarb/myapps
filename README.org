@@ -4,7 +4,14 @@
     #+begin_example
       ssh -p 8101 karaf@localhost
     #+end_example
- 2. Installer alle applikasjoner:
+ 2. Fra kommandolinja til karaf (aka. "karaf console") legg til et maven-repo som inneholder ukelonn bygd fra travis-ci
+    #+BEGIN_EXAMPLE
+      config:edit org.ops4j.pax.url.mvn
+      config:property-append org.ops4j.pax.url.mvn.repositories ", https://maven.bang.priv.no/repository/@id=ukelonn@snapshots"
+      config:property-set org.ops4j.pax.url.mvn.globalUpdatePolicy always
+      config:update
+    #+END_EXAMPLE
+ 3. Installer alle applikasjoner:
     #+begin_example
       feature:repo-add mvn:no.priv.bang.myapps/myapps/LATEST/xml/features
       feature:install myapps
