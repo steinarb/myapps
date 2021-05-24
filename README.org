@@ -16,6 +16,23 @@
       feature:repo-add mvn:no.priv.bang.myapps/myapps/LATEST/xml/features
       feature:install myapps
     #+end_example
+** Oppgradering
+ 1. Ta SSH inn til karaf:
+    #+begin_example
+      ssh -p 8101 karaf@localhost
+    #+end_example
+ 2. Avinstaller alle applikasjoner
+    #+begin_example
+      feature:uninstall myapps
+    #+end_example
+ 3. Legg til repo på nytt, for å få nyeste releasede versjoner og nyeste SNAPSHOT
+    #+begin_example
+      feature:repo-add mvn:no.priv.bang.myapps/myapps/LATEST/xml/features
+    #+end_example
+ 4. Installer nyeste versjoner og nyeste SNAPSHOT av alle applikasjonene
+    #+begin_example
+      feature:install myapps
+    #+end_example
 ** Bygg
 For å bygge:
 #+begin_example
