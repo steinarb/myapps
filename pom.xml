@@ -17,6 +17,7 @@
         <handlereg.version>LATEST</handlereg.version>
         <oldalbum.version>LATEST</oldalbum.version>
         <sonarcollector.version>LATEST</sonarcollector.version>
+        <frontend-demo.version>LATEST</frontend-demo.version>
     </properties>
 
     <build>

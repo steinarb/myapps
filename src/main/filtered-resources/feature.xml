@@ -6,11 +6,13 @@
     <repository>mvn:no.priv.bang.handlereg/karaf/${handlereg.version}/xml/features</repository>
     <repository>mvn:no.priv.bang.oldalbum/karaf/${oldalbum.version}/xml/features</repository>
     <repository>mvn:no.priv.bang.sonar.sonar-collector/sonar-collector-webhook/${sonarcollector.version}/xml/features</repository>
+    <repository>mvn:no.priv.bang.demos/frontend-karaf-demo/${frontend-demo.version}/xml/features</repository>
     <feature name="myapps" description="all of my apps" version="${project.version}">
         <feature>user-admin-with-productiondb</feature>
         <feature>ukelonn-with-postgresql-and-provided-authservice</feature>
         <feature>handlereg-with-postgresql-and-provided-authservice</feature>
         <feature>oldalbum-with-postgresql-and-provided-authservice</feature>
         <feature>sonar-collector-webhook-with-postgresql</feature>
+        <feature>frontend-karaf-demo</feature>
     </feature>
 </features>
