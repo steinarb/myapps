@@ -7,12 +7,23 @@
     <repository>mvn:no.priv.bang.oldalbum/karaf/${oldalbum.version}/xml/features</repository>
     <repository>mvn:no.priv.bang.sonar.sonar-collector/sonar-collector-webhook/${sonarcollector.version}/xml/features</repository>
     <repository>mvn:no.priv.bang.demos/frontend-karaf-demo/${frontend-demo.version}/xml/features</repository>
+    <repository>mvn:no.priv.bang.sampleapp/karaf/LATEST/xml/features</repository>
+
     <feature name="myapps" description="all of my apps" version="${project.version}">
         <feature>user-admin-with-productiondb</feature>
         <feature>ukelonn-with-postgresql-and-provided-authservice</feature>
         <feature>handlereg-with-postgresql-and-provided-authservice</feature>
         <feature>oldalbum-with-postgresql-and-provided-authservice</feature>
         <feature>sonar-collector-webhook-with-postgresql</feature>
+        <feature>frontend-karaf-demo</feature>
+    </feature>
+
+    <feature name="myapps-test" description="test versions of all of my apps" version="${project.version}">
+        <feature>user-admin-with-testdb</feature>
+        <feature>ukelonn-with-derby</feature>
+        <feature>handlereg-with-derby</feature>
+        <feature>oldalbum-with-derby</feature>
+        <feature>sampleapp-with-derby</feature>
         <feature>frontend-karaf-demo</feature>
     </feature>
 </features>
