@@ -23,7 +23,7 @@
         <feature>ukelonn-with-derby-and-provided-authservice</feature>
         <feature>handlereg-with-derby-and-provided-authservice</feature>
         <feature>oldalbum-with-derby-and-provided-authservice</feature>
-        <feature>sampleapp-with-derby</feature>
+        <feature>sampleapp-with-derby-and-provided-authservice</feature>
         <feature>frontend-karaf-demo</feature>
     </feature>
 </features>
