@@ -21,7 +21,7 @@
     <feature name="myapps-test" description="test versions of all of my apps" version="${project.version}">
         <feature>user-admin-with-testdb</feature>
         <feature>ukelonn-with-derby-and-provided-authservice</feature>
-        <feature>handlereg-with-derby</feature>
+        <feature>handlereg-with-derby-and-provided-authservice</feature>
         <feature>oldalbum-with-derby</feature>
         <feature>sampleapp-with-derby</feature>
         <feature>frontend-karaf-demo</feature>
