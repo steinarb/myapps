@@ -10,6 +10,7 @@
     <repository>mvn:no.priv.bang.sampleapp/karaf/LATEST/xml/features</repository>
     <repository>mvn:no.priv.bang.handlelapp/karaf/LATEST/xml/features</repository>
     <repository>mvn:no.priv.bang.ratatoskr/karaf/LATEST/xml/features</repository>
+    <repository>mvn:no.priv.bang.fildele/karaf/LATEST/xml/features</repository>
 
     <feature name="myapps" description="all of my apps" version="${project.version}">
         <feature>user-admin-with-productiondb</feature>
@@ -29,5 +30,6 @@
         <feature>frontend-karaf-demo</feature>
         <feature>handlelapp-with-derby-and-provided-authservice</feature>
         <feature>ratatoskr-with-derby-and-provided-authservice</feature>
+        <feature>fildele-with-derby-and-provided-authservice</feature>
     </feature>
 </features>
